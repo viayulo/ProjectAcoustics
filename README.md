@@ -1,3 +1,11 @@
+> [!IMPORTANT]
+>
+> The public version of **Project Acoustics** was discontinued on **July 1st, 2024**.
+>
+> This repository provides a partial archive of the original project and attempts to make it compatible with the latest version of Unreal Engine, as no similar solution is currently available.
+>
+> For additional information, please refer to the [README](./Archive/README.md).
+
 # Microsoft Project Acoustics
 This repository provides a communication channel for customers using [Project Acoustics](https://aka.ms/acoustics).
 
@@ -5,7 +13,7 @@ This repository provides a communication channel for customers using [Project Ac
     * [Notices](https://github.com/microsoft/ProjectAcoustics/labels/notice)
     * [Known issues](https://github.com/microsoft/ProjectAcoustics/labels/known%20issue)
     * [Questions](https://github.com/microsoft/ProjectAcoustics/labels/question)
-    
+
 ## RELEASE UPDATE (November 17, 2022):
 
 We're happy to announce that a new version of Project Acoustics is available! It includes many bug fixes and new features. The documentation has been updated at http://aka.ms/acoustics with information about new features and beta features. Here's a few highlights:

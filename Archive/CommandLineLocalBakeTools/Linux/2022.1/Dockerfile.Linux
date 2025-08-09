@@ -1,0 +1,31 @@
+FROM mcr.microsoft.com/mirror/docker/library/ubuntu:20.04
+
+# Accept product version information as a build-time variable
+ARG PA_ProductVersion
+
+LABEL maintainer "MICROSOFT CORPORATION"
+LABEL com.microsoft.projectacoustics.version=${PA_ProductVersion}
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgomp1 \
+    libstdc++6 \
+    libcurl4 \
+    software-properties-common \
+    && \
+    add-apt-repository ppa:ubuntu-toolchain-r/test \
+    && \
+    apt-get -y update && \
+    apt-get -y upgrade && \
+    apt-get -y dist-upgrade && \
+    apt-get install -y gcc-11 \
+    && \
+    # Clean-up
+    apt-get -y autoremove \
+    && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /acoustics/tools
+COPY ./* /acoustics/tools/
+
+# give execution permissions to all Triton binaries
+RUN chmod +x Triton.*
